@@ -19,19 +19,39 @@ export default function Footer() {
         <h2 className="text-cyan-400 text-2xl font-bold">Salim Baktash</h2>
         <p className="text-gray-400">Full STACK DEVELOPER</p>
         <div className="flex justify-center md:justify-start space-x-4 mt-3">
-          <a href="#" className="hover:text-cyan-400">
+          <a
+            href="https://github.com/SSTechInd-Tec"
+            target="_blank"
+            className="hover:text-cyan-400"
+          >
             <Github size={24} />
           </a>
-          <a href="#" className="hover:text-cyan-400">
+          <a
+            href="https://www.linkedin.com/in/mohammad-salim-8453a729b"
+            target="_blank"
+            className="hover:text-cyan-400"
+          >
             <Linkedin size={24} />
           </a>
-          <a href="#" className="hover:text-cyan-400">
+          <a
+            href="https://x.com/StarkBakTec?t=LkhI8Ia-lewG7-_sZASoVA&s=09"
+            target="_blank"
+            className="hover:text-cyan-400"
+          >
             <Twitter size={24} />
           </a>
-          <a href="#" className="hover:text-cyan-400">
+          <a
+            href="https://www.facebook.com/share/1A2X9Hw6N4/"
+            target="_blank"
+            className="hover:text-cyan-400"
+          >
             <Facebook size={24} />
           </a>
-          <a href="#" className="hover:text-cyan-400">
+          <a
+            href="https://www.instagram.com/starkbaktec/"
+            target="_blank"
+            className="hover:text-cyan-400"
+          >
             <Instagram size={24} />
           </a>
         </div>
