@@ -5,7 +5,7 @@ import ProfileCard from "./components/profile-card";
 const HeroSection = () => {
   return (
     <div
-      className="relative flex flex-col md:flex-row items-center justify-center lg:-my-44 md:-my-44 bg-black text-white px-6"
+      className="relative flex flex-col md:flex-row items-center justify-center md:my-24 my-22 bg-black text-white px-6"
       id="home"
     >
       <br />
