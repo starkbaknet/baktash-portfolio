@@ -2,7 +2,7 @@ export const skillsList = [
   [
     {
       name: "Python",
-      icon: "https://s3.dualstack.us-east-2.amazonaws.com/pythondotorg-assets/media/community/logos/python-logo-only.png",
+      icon: "/python.svg",
     },
     {
       name: "JavaScript",
@@ -167,18 +167,18 @@ export const skillsList = [
       icon: "https://icon.icepanel.io/Technology/png-shadow-512/Linux.png",
     },
   ],
-  [
-    {
-      name: "Bash",
-      icon: "https://icon.icepanel.io/Technology/png-shadow-512/Bash.png",
-    },
-    {
-      name: "VSCode",
-      icon: "https://icon.icepanel.io/Technology/svg/Visual-Studio-Code-%28VS-Code%29.svg",
-    },
-    {
-      name: "PyQt",
-      icon: "https://icon.icepanel.io/Technology/svg/Qt-Framework.svg",
-    },
-  ],
+  // [
+  //   {
+  //     name: "Bash",
+  //     icon: "https://icon.icepanel.io/Technology/png-shadow-512/Bash.png",
+  //   },
+  //   {
+  //     name: "VSCode",
+  //     icon: "https://icon.icepanel.io/Technology/svg/Visual-Studio-Code-%28VS-Code%29.svg",
+  //   },
+  //   {
+  //     name: "PyQt",
+  //     icon: "https://icon.icepanel.io/Technology/svg/Qt-Framework.svg",
+  //   },
+  // ],
 ];

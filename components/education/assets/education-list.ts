@@ -1,18 +1,18 @@
 export const educationList = [
   {
-    institution: "Royal Academy",
-    degree: "Matriculation in Science",
-    duration: "January 2017 - January 2019",
+    institution: "Azad Khan High School",
+    degree: "High School Degree",
+    duration: "2011 - 2022",
     description:
-      "Lorem ipsum is simply dummy text of the printing and typesetting industry.",
-    logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/typescript/typescript.png", // Example logo
+      "Completed a High School Degree at Azad Khan High School from 2011 to 2022, gaining a strong foundation in academic studies and personal development.",
+    logo: "/school.svg", // Example logo
   },
   {
-    institution: "PECHS Govt. Boys College",
-    degree: "Intermediate in Pre-Engineering",
-    duration: "January 2019 - January 2021",
+    institution: "Self Study",
+    degree: "Programming and Development",
+    duration: "2016 - Present",
     description:
-      "Lorem ipsum is simply dummy text of the printing and typesetting industry.",
-    logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/javascript/javascript.png", // Example logo
+      "Engaged in self-study in Programming and Development since 2016, continuously learning and enhancing skills in coding, software development, and problem-solving.",
+    logo: "/home.svg", // Example logo
   },
 ];
