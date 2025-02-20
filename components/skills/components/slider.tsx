@@ -40,7 +40,6 @@ const Slider: React.FC<SliderProps> = ({ slides }) => {
   const handleEnd = () => {
     setIsDragging(false);
 
-    // Move only if dragged enough & within bounds
     if (offset > 50 && currentIndex > 0) {
       prevSlide();
     } else if (offset < -50 && currentIndex < slides.length - 1) {
@@ -74,7 +73,6 @@ const Slider: React.FC<SliderProps> = ({ slides }) => {
         ))}
       </div>
 
-      {/* Navigation Buttons */}
       {currentIndex > 0 && (
         <button
           onClick={prevSlide}
