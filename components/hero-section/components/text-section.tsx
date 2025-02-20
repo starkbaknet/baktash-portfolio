@@ -3,7 +3,7 @@ const TextSection = () => {
     <div>
       <h1 className="text-4xl font-bold text-blue-400">HI...!!!!</h1>
       <h2 className="text-2xl font-semibold mt-2">
-        My name is <span className="text-blue-400">Salim Baktash</span>
+        I&apos;m <span className="text-blue-400">Salim Baktash</span>
       </h2>
       <p className="mt-4">
         A passionate developer who loves creating innovative solutions to solve

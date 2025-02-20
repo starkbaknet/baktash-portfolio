@@ -8,7 +8,14 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const title = "Salim Baktash";
-  const menuItems = ["Home", "Skills", "Education", "Experience", "ContactMe"];
+  const menuItems = [
+    "Home",
+    "Skills",
+    "Education",
+    "Experience",
+    "Proficiency",
+    "ContactMe",
+  ];
 
   return (
     <nav className="fixed top-0 left-0 w-full bg-black shadow-lg z-50 h-14 flex items-center justify-center">
