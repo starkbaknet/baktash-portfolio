@@ -64,7 +64,7 @@ export const metadata: Metadata = {
     "Mobile Development",
   ],
   authors: [{ name: "Salim Baktash", url: "https://starkbak.net" }],
-  applicationName: "StarkBak Portfolio",
+  applicationName: "Salim Baktash Portfolio",
   generator: "Next.js",
   metadataBase: new URL("https://starkbak.net"),
   openGraph: {
