@@ -19,6 +19,15 @@ export const metadata: Metadata = {
   description:
     "Salim Baktash is a Full Stack Developer with expertise in frontend and backend development, cloud technologies, API integration, and performance optimization. He specializes in building scalable and high-performance web and mobile applications while maintaining clean and efficient code. With a strong foundation in multiple programming languages, frameworks, and databases, Salim delivers seamless digital experiences tailored to modern development needs.",
   keywords: [
+    "Salim Baktash",
+    "Salim",
+    "Baktash",
+    "StarkBak Net",
+    "Stark Bak Net",
+    "Stark Bak",
+    "StarkBak",
+    "Stark",
+    "Bak",
     "Full Stack Developer",
     "Web Development",
     "Frontend Development",
