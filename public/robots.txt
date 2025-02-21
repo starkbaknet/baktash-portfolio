@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://starkbak.net
+
+# Sitemaps
+Sitemap: https://starkbak.net/sitemap.xml
