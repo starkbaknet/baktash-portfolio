@@ -14,7 +14,6 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// SEO Metadata
 export const metadata: Metadata = {
   title: "Salim Baktash - Full Stack Developer",
   description:
@@ -77,7 +76,7 @@ export const metadata: Metadata = {
     siteName: "StarkBak Portfolio",
     images: [
       {
-        url: "https://starkbak.net/og-image.jpg", // Replace with your actual Open Graph image URL
+        url: "https://starkbak.net/splash.png",
         width: 1200,
         height: 630,
         alt: "Salim Baktash - Full Stack Developer",
@@ -86,12 +85,12 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    site: "@StarkBakTec", // Replace with your actual Twitter handle
+    site: "@StarkBakTec",
     creator: "@StarkBakTec",
     title: "Salim Baktash - Full Stack Developer",
     description:
       "Discover the work of Salim Baktash, a Full Stack Developer specializing in modern web and mobile applications, delivering high-performance solutions.",
-    images: ["https://starkbak.net/og-image.jpg"], // Replace with your actual image URL
+    images: ["https://starkbak.net/splash.png"],
   },
   alternates: {
     canonical: "https://starkbak.net",
@@ -102,15 +101,17 @@ export const metadata: Metadata = {
   },
 };
 
-// JSON-LD Structured Data
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Salim Baktash",
   url: "https://starkbak.net",
   sameAs: [
-    "https://www.linkedin.com/in/salim-baktash",
-    "https://github.com/salim-baktash",
+    "https://www.linkedin.com/in/mohammad-salim-8453a729b",
+    "https://github.com/SSTechInd-Tec",
+    "https://x.com/StarkBakTec?t=LkhI8Ia-lewG7-_sZASoVA&s=09",
+    "https://www.facebook.com/share/1A2X9Hw6N4/",
+    "https://www.instagram.com/starkbaktec/",
   ],
   jobTitle: "Full Stack Developer",
   worksFor: {
