@@ -28,23 +28,27 @@ jobs:
         run: |
           docker push ghcr.io/sstechind-tec/baktash-portfolio/portfolio:latest
 
-      - name: Deploy to VPS
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-          VPS_USER: "root"
-          VPS_HOST: "ssh.starkbak.net"
-        run: |
-          echo "$SSH_PRIVATE_KEY" > private_key
-          chmod 600 private_key
+          - name: Deploy to VPS
+          env:
+            SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+            VPS_USER: "root"
+            VPS_HOST: "ssh.starkbak.net"
+            GHCR_TOKEN: ${{ secrets.GHCR_TOKEN }}  # Ensure your GHCR_TOKEN is set in secrets
+          run: |
+            echo "$SSH_PRIVATE_KEY" > private_key
+            chmod 600 private_key
 
-          # SSH to VPS and pull the image from GHCR
-          ssh -i private_key -o StrictHostKeyChecking=no $VPS_USER@$VPS_HOST << 'EOF'
-            docker pull ghcr.io/sstechind-tec/baktash-portfolio/portfolio:latest
+            # SSH to VPS and log in to GHCR using the GHCR_TOKEN
+            ssh -i private_key -o StrictHostKeyChecking=no $VPS_USER@$VPS_HOST << 'EOF'
+              echo $GHCR_TOKEN | docker login ghcr.io -u $USER --password-stdin
 
-            # Stop and remove old container
-            docker stop portfolio-app || true
-            docker rm portfolio-app || true
+              # Pull the image from GHCR
+              docker pull ghcr.io/sstechind-tec/baktash-portfolio/portfolio:latest
 
-            # Run the new container
-            docker run -d --name portfolio-app -p 3000:3000 --restart always ghcr.io/sstechind-tec/baktash-portfolio/portfolio:latest
-          EOF
+              # Stop and remove old container
+              docker stop portfolio-app || true
+              docker rm portfolio-app || true
+
+              # Run the new container
+              docker run -d --name portfolio-app -p 3000:3000 --restart always ghcr.io/sstechind-tec/baktash-portfolio/portfolio:latest
+            EOF
