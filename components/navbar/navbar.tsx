@@ -7,7 +7,7 @@ import Link from "next/link";
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
-  const title = "Salim Baktash";
+  const title = "SalimBaktash";
   const menuItems = [
     "Home",
     "Skills",
