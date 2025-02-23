@@ -1,0 +1,10 @@
+version: "3.8"
+services:
+  portfolio-app:
+    image: starkbak/portfolio
+    container_name: portfolio-app
+    restart: always
+    ports:
+      - "3001:3000"
+    environment:
+      - NODE_ENV=production

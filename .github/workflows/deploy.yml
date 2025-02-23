@@ -1,0 +1,37 @@
+name: Deploy to VPS
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Build Docker Image
+        run: |
+          docker build -t starkbak/portfolio .
+
+      - name: Push Image to VPS
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          VPS_USER: "root"
+          VPS_HOST: "ssh.starkbak.net"
+        run: |
+          echo "$SSH_PRIVATE_KEY" > private_key
+          chmod 600 private_key
+
+          # Copy image to VPS
+          docker save starkbak/portfolio | ssh -i private_key -o StrictHostKeyChecking=no $VPS_USER@$VPS_HOST "docker load"
+
+          # Restart the container
+          ssh -i private_key -o StrictHostKeyChecking=no $VPS_USER@$VPS_HOST << 'EOF'
+            docker stop portfolio-app || true
+            docker rm portfolio-app || true
+            docker run -d --name portfolio-app -p 3001:3000 --restart always starkbak/portfolio
+          EOF
