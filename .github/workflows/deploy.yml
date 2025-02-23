@@ -22,7 +22,7 @@ jobs:
 
       - name: Build Docker Image
         run: |
-          docker build -t ghcr.io/${{ github.repository }}/portfolio:latest .
+          docker build -t ghcr.io/sstechind-tec/baktash-portfolio/portfolio:latest .
 
       - name: Push Image to GitHub Container Registry
         run: |
