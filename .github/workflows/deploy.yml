@@ -13,43 +13,43 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
-      - name: Log in to GitHub Container Registry
+      - name: Log in to Docker Hub
         uses: docker/login-action@v2
         with:
-          registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ secrets.GHCR_TOKEN }}
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Build Docker Image
         run: |
-          docker build -t ghcr.io/sstechind-tec/baktash-portfolio/portfolio:latest .
+          docker build -t your-dockerhub-username/portfolio:latest .
 
-      - name: Push Image to GitHub Container Registry
+      - name: Push Image to Docker Hub (Private)
         run: |
-          docker push ghcr.io/sstechind-tec/baktash-portfolio/portfolio:latest
+          docker push starkbak/portfolio:latest
 
       - name: Deploy to VPS
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           VPS_USER: "root"
           VPS_HOST: "ssh.starkbak.net"
-          GHCR_TOKEN: ${{ secrets.GHCR_TOKEN }}
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
         run: |
           echo "$SSH_PRIVATE_KEY" > private_key
           chmod 600 private_key
 
-          # SSH to VPS and log in to GHCR using the GHCR_TOKEN
+          # SSH to VPS and log in to Docker Hub using the credentials
           ssh -i private_key -o StrictHostKeyChecking=no $VPS_USER@$VPS_HOST << 'EOF'
-            # Log in to GHCR using the token
-            docker login ghcr.io -u $USER --password-stdin
+            # Log in to Docker Hub
+            echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
 
-            # Pull the Docker image
-            docker pull ghcr.io/sstechind-tec/baktash-portfolio/portfolio:latest
+            # Pull the Docker image from Docker Hub (Private)
+            docker pull starkbak/portfolio:latest
 
             # Stop and remove the old container
             docker stop portfolio-app || true
             docker rm portfolio-app || true
 
             # Run the new container
-            docker run -d --name portfolio-app -p 3000:3000 --restart always ghcr.io/sstechind-tec/baktash-portfolio/portfolio:latest
+            docker run -d --name portfolio-app -p 3000:3000 --restart always starkbak/portfolio:latest
           EOF
