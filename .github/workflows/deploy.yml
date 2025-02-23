@@ -42,10 +42,7 @@ jobs:
           # SSH to VPS and log in to GHCR using the GHCR_TOKEN
           ssh -i private_key -o StrictHostKeyChecking=no $VPS_USER@$VPS_HOST << 'EOF'
             # Log in to GHCR using the token
-            echo $GHCR_TOKEN | docker login ghcr.io -u $USER --password-stdin
-
-            # Verify Docker login worked
-            docker info
+            docker login ghcr.io -u $USER --password-stdin
 
             # Pull the Docker image
             docker pull ghcr.io/sstechind-tec/baktash-portfolio/portfolio:latest
