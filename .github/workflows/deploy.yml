@@ -34,7 +34,6 @@ jobs:
           VPS_USER: "root"
           VPS_HOST: "ssh.starkbak.net"
           GHCR_TOKEN: ${{ secrets.GHCR_TOKEN }}
-          USER: ${{ github.actor }}
         run: |
           echo "$SSH_PRIVATE_KEY" > private_key
           chmod 600 private_key
