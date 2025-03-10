@@ -27,7 +27,7 @@ export const ExperiencesList = [
     logo: "/mocai.png",
     company: "Ministry of Culture and Information",
     position: "Full Stack Developer",
-    duration: "Jun 2018 - Dec 2019",
+    duration: "Jun 2023 - Dec 2023",
     responsibilities: [
       "Developed interactive UI components",
       "Worked on performance optimizations",
