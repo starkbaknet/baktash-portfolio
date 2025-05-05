@@ -19,7 +19,7 @@ export default function Footer() {
         <p className="text-gray-400">Full STACK DEVELOPER</p>
         <div className="flex justify-center md:justify-start space-x-4 mt-3">
           <a
-            href="https://github.com/SSTechInd-Tec"
+            href="https://github.com/starkbaknet"
             target="_blank"
             className="hover:text-cyan-400"
           >
